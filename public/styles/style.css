@@ -1,0 +1,79 @@
+/* display: inline-flex; */
+
+* {
+font-family: 'Ubuntu Condensed', sans-serif;
+font-weight: bold;
+}
+
+a:link {
+  color: green;
+}
+
+a:visited {
+  color: green;
+}
+
+a:hover {
+  color: orange;
+}
+
+a:active {
+  color: blue;
+}
+
+h1{
+  font-size: 75px;
+  color: red;
+  text-align: center;
+}
+
+h2{
+  font-size: 50px;
+  color: blue;
+}
+
+body {
+  background: black url('/images/background.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: 25px;
+  padding: 0px;
+  margin: 0px;
+}
+
+nav {
+  padding: 0px;
+  margin: 0px;
+  padding-right: 25px;
+  width: 20%;
+}
+
+nav ul li {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+}
+
+main {
+  padding: 25px;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+#content {
+  border-left: 1px solid red;
+  padding-left: 25px;
+  width: 80%;
+  text-align: center;
+}

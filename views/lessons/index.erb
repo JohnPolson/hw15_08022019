@@ -1,0 +1,23 @@
+<h2>Lessons available:</h2>
+
+<table>
+  <tr>
+    <th>Lesson Name</th>
+    <td> | </td>
+    <th>Instructor</th>
+    <td> | </td>
+    <th>Capacity</th>
+    <td> | </td>
+  </tr>
+  <% for lesson in @lessons %>
+  <tr>
+    <td><a href="/lessons/<%= lesson.id %>"><%= lesson.title %></a></td>
+    <td> | </td>
+    <td><a href="/lessons/<%= lesson.id %>"><%= lesson.instructor %></a></td>
+    <td> | </td>
+    <td><a href="/lessons/<%= lesson.id %>"><%= lesson.capacity %></a></td>
+    <td> | </td>
+    <td></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,0 +1,19 @@
+<h2>Current Bookings:</h2>
+
+<table>
+  <tr>
+    <th>Member ID</th>
+    <td> | </td>
+    <th>Lesson ID</th>
+    <td> | </td>
+  </tr>
+  <% for booking in @bookings %>
+  <tr>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.member_id %></a></td>
+    <td> | </td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.lesson_id %></a></td>
+    <td> | </td>
+    <td></td>
+  </tr>
+  <% end %>
+</table>
