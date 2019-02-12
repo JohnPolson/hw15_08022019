@@ -1,14 +1,13 @@
-<h1><%= @booking.lesson.id %> (member)</h1>
+<h1><%= @members.first_name%> <%= @members.last_name%></h1>
+<h2>...has booked the following classes:</h2>
 
 
-<p>
-
-</p>
-
-<h3>
-
-</h3>
 
 <ul>
+  <% @members.lessons.each do |lesson| %>
+  <li>
+    <%=lesson.title%>
+  </li>
+  <% end %>
 
 </ul>

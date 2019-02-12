@@ -1,8 +1,10 @@
 require_relative( '../db/sql_runner' )
+require_relative('booking')
+require_relative('lesson')
 
 class Member
 
-  attr_reader( :first_name, :last_name, :age, :address, :email, :id )
+  attr_accessor( :first_name, :last_name, :age, :address, :email, :id )
 
   def initialize( options )
     @id = options['id'].to_i if options['id']
@@ -49,6 +51,17 @@ class Member
   def self.delete_all
     sql = "DELETE FROM members"
     SqlRunner.run( sql )
+  end
+
+  def full_name
+    return "#{@first_name.capitalize} #{@last_name.capitalize}"
+  end
+
+  def lessons
+    sql = "SELECT l.* FROM lessons l INNER JOIN bookings b ON b.lesson_id = l.id WHERE b.member_id = $1;"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |lesson| Lesson.new(lesson) }
   end
 
 end

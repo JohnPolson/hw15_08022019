@@ -1,19 +1,23 @@
-<h2>Current Bookings:</h2>
+<h3>Current Bookings:</h3>
+
+<p>
+  <a href="/bookings/new">Book your lesson now!</a>
+</p>
 
 <table>
   <tr>
-    <th>Member ID</th>
-    <td> | </td>
-    <th>Lesson ID</th>
-    <td> | </td>
+    <th>Member</th>
+
+    <th>Lesson</th>
+
   </tr>
   <% for booking in @bookings %>
   <tr>
-    <td><a href="/bookings/<%= booking.id %>"><%= booking.member_id %></a></td>
-    <td> | </td>
-    <td><a href="/bookings/<%= booking.id %>"><%= booking.lesson_id %></a></td>
-    <td> | </td>
-    <td></td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.member.full_name %></a></td>
+    <td><a href="/bookings/<%= booking.id %>"><%= booking.lesson.title %></a></td>
+    <td><form action="/bookings/<%= booking.id %>/delete" method="POST">
+      <input class="btn btn--danger" type="submit" value="delete" />
+    </form></td>
   </tr>
   <% end %>
 </table>

@@ -1,0 +1,11 @@
+<h2>The following members are currently signed up for</h2>
+<h2><%= @lessons.instructor%>'s - <%= @lessons.title%> class.</h2>
+
+<ul>
+  <% @lessons.members.each do |member| %>
+  <li>
+    <%=member.full_name%>
+  </li>
+  <% end %>
+
+</ul>

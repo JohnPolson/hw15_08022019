@@ -1,4 +1,7 @@
 require_relative( '../db/sql_runner' )
+require_relative('lesson')
+require_relative('member')
+
 
 class Booking
 
@@ -42,6 +45,14 @@ class Booking
     WHERE id = $1"
     values = [id]
     SqlRunner.run( sql, values )
+  end
+
+  def self.find( id )
+    sql = "SELECT * FROM bookings
+    WHERE id = $1"
+    values = [id]
+    results = SqlRunner.run( sql, values )
+    return Booking.new( results.first )
   end
 
   def member()
