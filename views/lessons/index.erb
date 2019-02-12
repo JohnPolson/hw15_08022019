@@ -19,6 +19,8 @@
 
     <td><a href="/lessons/<%= lesson.id %>"><%= lesson.capacity %></a></td>
 
+    <td><a href="/lessons/<%= lesson.id %>/edit"><input class="btn btn--danger" type="submit" value="edit"></a></td>
+
     <td><form action="/lessons/<%= lesson.id %>/delete" method="POST">
       <input class="btn btn--danger" type="submit" value="delete" />
     </form></td>

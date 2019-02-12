@@ -17,5 +17,10 @@ get '/lessons/:id' do
   erb( :"lessons/show" )
 end
 
+get '/lessons/:id/edit' do
+  @lessons = Lesson.find(params['id'].to_i)
+  erb( :"lessons/edit" )
+end
+
 # binding.pry
 # nil

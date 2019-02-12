@@ -29,10 +29,10 @@ post '/bookings/:id/delete' do
   redirect to("/bookings")
 end
 
-# get '/bookings/:id' do
-#   Booking.find(params[:id])
-#   erb( :"bookings/show" )
-# end
+get '/bookings/:id' do
+  @bookings = Booking.all
+  erb( :"bookings/show" )
+end
 
 # binding.pry
 # nil
