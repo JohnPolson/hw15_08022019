@@ -30,7 +30,9 @@ post '/bookings/:id/delete' do
 end
 
 get '/bookings/:id' do
-  @bookings = Booking.all
+  @bookings = Booking.find(params['id'].to_i)
+  @lessons = Lesson.find(params['id'].to_i)
+  @members = Member.find(params['id'].to_i)
   erb( :"bookings/show" )
 end
 

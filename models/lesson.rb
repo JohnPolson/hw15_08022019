@@ -31,6 +31,14 @@ class Lesson
     @id = results.first()['id'].to_i
   end
 
+  def update()
+    sql = "UPDATE lessons
+    SET (title, instructor, capacity) = ($1, $2, $3)
+    WHERE id = $4"
+    values = [@title, @instructor, @capacity, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.all()
     sql = "SELECT * FROM lessons"
     results = SqlRunner.run( sql )
