@@ -74,6 +74,14 @@ form {
     text-align: center;
 }
 
+label {
+    text-align: center;
+}
+
+div {
+  text-align: center;
+}
+
 p {
   text-align: center;
 }
