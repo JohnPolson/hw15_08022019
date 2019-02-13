@@ -7,3 +7,7 @@ require_relative('controllers/bookings_controller')
 get '/' do
   erb( :index )
 end
+
+get '/about' do
+  erb ( :"about/index" )
+end

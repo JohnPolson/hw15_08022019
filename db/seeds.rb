@@ -14,7 +14,7 @@ lesson1 = Lesson.new({
 })
 
 lesson2 = Lesson.new({
-  "title" => "Interval Training",
+  "title" => "Interval",
   "instructor" => "Tom Davis",
   "capacity" => "20"
 })
@@ -50,7 +50,7 @@ member2 = Member.new({
   "last_name" => "Edwards",
   "age" => 27,
   "address" => "19 King Street",
-  "email" => "john.dough@gmail.com",
+  "email" => "kevin.edwards@gmail.com",
 })
 member3 = Member.new({
   "first_name" => "Linda",
@@ -116,5 +116,5 @@ booking6.save()
 booking7.save()
 booking8.save()
 
-binding.pry
-nil
+# binding.pry
+# nil
