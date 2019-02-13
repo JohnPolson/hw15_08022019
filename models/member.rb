@@ -48,6 +48,12 @@ class Member
     return Member.new( results.first )
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM members WHERE id = $1"
+    values = [id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.delete_all
     sql = "DELETE FROM members"
     SqlRunner.run( sql )
