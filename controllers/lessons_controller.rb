@@ -4,7 +4,7 @@ require( 'pry')
 require( 'pry-byebug' )
 require_relative( '../models/lesson.rb' )
 require_relative( '../models/lesson.rb' )
-require_relative( '../models/member.rb' )
+require_relative( '../models/lesson.rb' )
 also_reload( '../models/*' )
 
 get '/lessons' do
@@ -26,6 +26,12 @@ end
 post '/lessons/:id/delete' do
   Lesson.delete(params[:id])
   redirect to("/lessons")
+end
+
+post '/lessons/:id' do
+  lesson = Lesson.new(params)
+  lesson.update()
+  redirect to ("/lessons/#{params['id']}")
 end
 
 get '/lessons/:id' do

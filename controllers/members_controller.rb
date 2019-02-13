@@ -18,7 +18,7 @@ get '/members/new' do
 end
 
 post '/members' do
-  member = Booking.new(params)
+  member = Member.new(params)
   member.save
   redirect to("/members")
 end
@@ -26,6 +26,12 @@ end
 post '/members/:id/delete' do
   Member.delete(params[:id])
   redirect to("/members")
+end
+
+post '/members/:id' do
+  member = Member.new(params)
+  member.update()
+  redirect to "/members/#{params['id']}"
 end
 
 get '/members/:id' do
@@ -37,6 +43,7 @@ get '/members/:id/edit' do
   @members = Member.find(params['id'].to_i)
   erb( :"members/edit" )
 end
+
 
 
 
